@@ -1,0 +1,290 @@
+body {
+/* font-family: serve para especificar o tipo de fonte da pagina */
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+.header { 
+/* overflow é para o background-color sempre prencher o que esta dentro dele, nao precisando ter uma altura definida */
+/* border-bottom sempre precisa de 3 atributos sendo espessura, "solid" que serve para ele cobrir toda pagina e a cor */
+    background-color: #232323;
+    color: white;
+    overflow: auto; 
+    border-bottom: 3px solid rgb(37, 207, 207);
+/* ao inves de colocar varios padding é possivel colocar o padding: e colocar o tamanha dos 4 lados ex: 30px 0 30px 0; */
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+
+
+.container {
+/* margin: auto; ele divide o espaço que sobra do width para cada lado  */
+    width: 80%;
+    margin: auto;
+}
+
+.titulo {
+    margin: 0;
+    float: left;
+    color: white;
+}
+
+.navbar {
+/*list-style: none; serve para retirar os pontos no design da lista  */
+    list-style: none;
+    float: right;
+    color: white;
+
+}
+
+.navbar li {
+/*text-transform: uppercase; serve para colocar as letras em maiusculo  */
+    float: left;
+    margin-left: 10px;
+    text-transform: uppercase;
+}
+
+.destaque {
+    color: rgb(37, 207, 207);
+}
+
+/* BANNER */
+
+.banner{
+    text-align: center;
+
+    background-color: darkgray;
+    background-image: url(imgBanner.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 750px;
+
+}
+
+.banner h1{
+    margin: 0;
+    font-size: 50px;
+    padding-top: 150px;
+   
+}
+
+.banner h3{
+    color: rgb(53, 53, 53);
+}
+
+/* fim banner  */
+
+/* saber mais */
+
+.divisao button{
+    border: 0;
+    background-color: rgb(37, 207, 207);
+    color: white;
+    text-transform: uppercase;
+    padding: 10px 30px;
+    margin-top: 30px;
+   
+}
+
+.divisao {
+    text-align: center;
+    background-color: #232323 ;
+    height: 90px;
+}
+
+/* MISSAO VISAO VALORES */
+
+.box img{
+    height: 100px;
+}
+ 
+.box {
+    /* border: 3px solid red; */
+    overflow: auto;
+} 
+
+.box-item {
+    /* border: 3px solid purple; */
+    float: left;
+    text-align: center;
+    width: 25%;
+    padding: 3%;
+}
+
+/* fim saiba mais  */
+
+/* footer */
+
+.footer {
+    text-align: center;
+    background-color: rgb(37, 207, 207);
+    height: 90px;
+}
+
+
+
+.footer h4 {
+    margin: 0;
+    font-weight: 100;
+    padding-top: 40px;
+    color: white;
+
+}
+/* fim do footer  */
+
+/* pagina quem somos  */
+
+.header_sobre { 
+        background-color: #232323;
+        color: white;
+        overflow: auto; 
+        border-bottom: 3px solid orangered;
+   
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+.somos {
+        background-image: url(ef8997c447a8b065b6599994bfbb5854.jpg);
+        height: 100%;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0);
+        box-shadow: 0 0 1em rgb(68, 68, 68);
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin: 0;
+        padding-top: 100px;
+        text-align: center;
+    }
+
+#quemSomos{
+    height: 75vh;
+    width: 100vw;
+    background-color: rgb(255, 255, 255);
+}
+
+.conteudoSobre{
+     position: relative; 
+    height: 55vh;
+    width: 100vw;
+    text-align: center;
+    top: 20vh;
+    margin-left: 0%;
+}
+
+.sobre{
+    top: -90px;
+    left: 250px;
+    margin: 0px;
+    font-size: 1.5em;
+    color: black;
+    text-align: center;
+    padding: 0%;
+}
+
+.destaque_sobre {
+    color: #741c1b;
+}
+
+/* fim quem somos  */
+
+/* nossa equipe  */
+
+#nossaEquipe{
+    text-align: center;
+}
+
+#tituloNossaEquipe{
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 3em;
+    font-weight: bold;
+    color: black;
+
+}   
+
+.containerIntegrantes1{
+    width: 80%;
+    overflow: auto;
+    text-align: center;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+.conteinerIntegrantes2{
+    width: 55%;
+    overflow: auto;
+    text-align: center;
+    margin: 0 auto;
+    padding: 30px;
+
+}
+
+.integrante { 
+    height: 300px;
+    width: 250px;
+    background-color: rgba(255, 255, 255, 0);
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.5em;
+    float: left;
+    margin-left: 180px;
+    margin-bottom: 50px;
+}
+
+.fotointegrante {
+    height: 60%;
+    width: 75%;
+    background-color: rgba(255, 255, 255, 0);
+    box-shadow: 0 0 1em rgb(68, 68, 68);
+    border-radius: 50%;
+    overflow: hidden;
+    margin: auto;
+}
+
+.integrante .fotointegrante img{
+    height: 100%;
+    width: 100%;
+}
+
+.nomeintegrante {
+    height: 50px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.usuariolinkedin{
+    height: 30px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0);
+    font-size: 0.8em;
+    padding: 10px 0 5px 0;
+}
+
+.integrante .iconlikedin img{
+    height: 35px;
+    width: 40px;
+    background-color: rgba(255, 255, 255, 0);
+    margin: auto;
+}
+
+/* fim nossa equipe  */
+
+
+/* footer da pagina sobre  */
+
+.footer_sobre {
+    text-align: center;
+    background-color: #741c1b;
+    height: 90px;
+}
+
+.footer_sobre h4 {
+    margin: 0;
+    font-weight: 100;
+    padding-top: 40px;
+    color: white;
+}
+
+/* fim footer da pagina sobre  */
