@@ -11,7 +11,7 @@
     
 <style>
     .meu-grafico {
-    width: 60%;
+    width: 50%;
     margin: auto;
 }
 .meu-grafico2 {
@@ -23,14 +23,13 @@
 </head>
 
 <body>
-    <!--Coloque sempre o gráfico em uma div, fica mais fácil para ajustar na página-->
-    <div class="meu-grafico">
-        <!--Gráfico virá aqui-->
+   
+        
         <canvas id="myChart"></canvas>
     </div>
 
     <div class="meu-grafico2">
-        <!--Gráfico virá aqui-->
+      
         <canvas id="myChart2"></canvas>
     </div>
    
@@ -39,46 +38,44 @@
 </html>
 
 <script>
-    // ctx é o contexto. Onde é para o gráfico ser renderizado? 
-    // Na div myChart! Vamos selecioná-la por getElementById
+   
     var ctx = document.getElementById('myChart');
 
-    // ao criar um new Chart, colocamos ->
-    // (contexto, { type, data e options} )
+   
     var meuGrafico = new Chart(ctx, {
-        // TYPE -> qual o tipo do gráfico? será um gráfico de barras? linhas? define aqui
+        
         type: 'line',
 
-        // DATA -> os dados renderizados no gráfico:
+        
         data: {
-            // Informações em Eixo X
+           
             labels: ["jan", "fev", "mar", "abr", "mai", "jun","jul","ago","set","out","nov","dez"],
             // Datasets -> grupos de dados!
             datasets: [
             // Primeiro dataset    
             {
                 // Qual o título deste dataset?
-                label: "Rendimentos 2020",
+                label: "Gastos 2021",
                 // Dados? Lembre-se, respectivos a labels.
-                data: [1000,1150,1500,2000,3000,4000,4500,5000,6000,6500,6700,7000],
-                // expessura da linha
+                data: [800,1750,1500,2000],
+                // expessura da linha 
                 borderWidth: 10,
                 // cor da linha - em rgba, a é a opacidade.
                 // 1 = 100% // 0.5 = 50%
                 borderColor: 'blue',
                 // cor de "fundo" dos dados na tela. transparent = sem cor.
-                backgroundColor: '#2966e8',
+                // backgroundColor: '#2966e8',
             },
 
             // Segundo dataset
             {
                 // igual o anterior. Mas, aqui, type line
                 type: 'line',
-                label: "Rendimentos 2021",
-                data: [7000,10000,12000,13000,14000,15000,15500,16000,17000,17550,17900,18000],
+                label: "gastos 2020",
+                data: [500,500,300,1000,1100,900,1500,800,700,1400,1000,500],
                 borderWidth: 10,
                 borderColor: 'red',
-                backgroundColor: '#ff7171'
+                // backgroundColor: '#ff7171'
             }
             ]
         },
@@ -92,7 +89,7 @@
                 // tamanho do texto
                 fontSize: 20,
                 // texto no titulo
-                text: "Meus rendimentos",
+                text: "Meus gastos",
                 // onde? right? left? top?
                 position: 'top',
             },
