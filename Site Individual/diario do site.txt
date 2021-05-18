@@ -1,0 +1,55 @@
+lembretes: 
+Cuidar da saude, sair do computador as 22hrs 
+Escrever lembretes das proximas tarefas 
+comentar bem o codigo para nunca esquecer o que fez
+
+
+05/05/2021 - Escolhi imagens para o site e pesquisei algumas animaçoes para usar
+06/05/2021 - Comecei a pagina home do site e fiz o menu de navegação. ps: ainda precisa subistituir as imagens de fundo e adicionar textos condizentes
+
+links:
+
+trap;
+https://open.spotify.com/playlist/3g2Mse7mRSjCkOhRKZZSSS?si=549089af586643cf
+https://deezer.page.link/5wQpNxXQWmLym2J99
+https://www.youtube.com/watch?v=xAM51Ovpr9M&list=PLQEUs9xtYT6o8QYY-NYg5hRuX-8fLrcy3
+
+sertanejo;
+https://open.spotify.com/playlist/37i9dQZF1DWWRRWxfkWIRi?si=60fbc2456fd643be
+https://deezer.page.link/8xbFxKt7eakw2uWv8
+https://www.youtube.com/watch?v=-ZByWa9hH5s&list=PLI5T8mm8NjCk-Er6DuuB2-_eKurtrCXfH
+
+funk;
+https://open.spotify.com/playlist/6l0HJ2gBmteUfiNrsc479o?si=7d0d5190a64f489e
+https://deezer.page.link/DtHqCJWGipgqE1KdA
+https://www.youtube.com/watch?v=RnKw577d3_s&list=RDGMEMfJVy26Rz8dJTob0Qhh1JfQ&start_radio=1
+
+samba;
+https://open.spotify.com/playlist/2jNdyvlFSnZo6MPalc3p7x?si=6371126ca0fc433f
+https://deezer.page.link/w1p6RHEK1GZZL15s7
+https://www.youtube.com/watch?v=s3QZWp2KB7g&list=RDGMEMMkXg6j_mS_cJ6jeRubgRyQ&start_radio=1
+
+pagode;
+https://open.spotify.com/playlist/37i9dQZF1DXchBFvKSUooB?si=1ae6bb9eda364026
+https://deezer.page.link/WTiX2zt4cFiXBGer7
+https://www.youtube.com/watch?v=c4XeTP11EI8&list=PLws-Q6lwJkI1jq4kJbugdcAJryK2u_vi1
+
+romantica;
+https://open.spotify.com/playlist/6RvFNzel4PXOrsBjY85tqb?si=3ba070672192423c
+https://deezer.page.link/oWm5ViHdGfSuvbnZA
+https://www.youtube.com/watch?v=2bigEyQD530
+
+rap;
+https://open.spotify.com/playlist/3NHJr2O6HVU1Dnywxogcyo?si=fc6fe2782515435c
+https://deezer.page.link/8XDYUYHEnCjMb3CCA
+https://www.youtube.com/watch?v=w2IhccXakkE&list=PL-FVH5VWgRPHNz24zZ5_FLHQWoidN6O1d
+
+rap geek;
+https://open.spotify.com/playlist/0vlIShxsJtXxriohBjfMeL?si=4caa8a3e39834e65
+https://deezer.page.link/mB1rboHds7M3ibRo6
+https://www.youtube.com/watch?v=FzsvnVOIV3c&list=PL-BkHM-E3ctUqvJYhFb0R2RFPPg7AaP8J
+
+rock;
+https://open.spotify.com/playlist/3rEtasq7NeGLOrLRxwBCUb?si=dbc494bcb2d84c14
+https://deezer.page.link/uFvvn5qLrqYqgTxT6
+https://www.youtube.com/watch?v=kXYiU_JCYtU&list=PLZ1dJqY6KWOXGGeIlZqleztqta23wHMGG
