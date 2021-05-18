@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../script/script.js"></script>
+    <title>Site</title>
+</head>
+
+<body>
+    <input type="checkbox" id="check">
+
+    <label for="check">
+        <img class="menu" src="../img/list.png" alt="">
+    </label>
+
+
+    <nav>
+
+        <ul>
+            <li><a href="index.html">Home</a> </li>
+            <li><a href="#significado">O Que é musica?</a> </li>
+            <li><a href="#historia">historia da musica</a> </li>
+            <li><a href="beneficios.html">Beneficios das musicas</a> </li>
+            <li><a href="generos.html">Generos de musica</a> </li> <br>
+            <button class="btn_menu" id="iniciar">iniciar</button><br><br>
+            <button class="btn_menu" id="cadastro">Cadastrar</button>
+        </ul>
+
+    </nav>
+
+
+
+    <section id="home" class="header">
+        <!-- <audio id="audioHeader" src="minha.mpeg" autoplay></audio> -->
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="coluna_header">
+                    
+                    <h1>Bem vindo</h1>
+                    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo dignissimos nobis eius,
+                        dolorum <br>
+                        nemo minus itaque sint possimus omnis quas, facilis necessitatibus dicta delectus nisi
+                        placeat
+                        <br>
+                        Eius, veniam. Optio, dolores.
+                    </p>
+
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+    <div class="pag1">
+
+        <div class="divisao"></div>
+
+
+        <section id="significado" class="informacoes">
+            <!-- <audio id="audioinfo" src="cogulandia.mpeg" autoplay></audio> -->
+            <div class="container">
+
+                <div class="row">
+
+                    <div class="coluna_informacoes">
+                        <h1>O que é musica?</h1>
+
+                        <div class="texto">
+                            <p>
+                                A música é uma forma de arte que se constitui na combinação de vários sons e ritmos,
+                                seguindo uma pré-organização ao longo do tempo.
+                                É considerada por diversos autores como uma prática cultural e humana.
+                                Não se conhece nenhuma civilização ou agrupamento que não possua manifestações musicais
+                                próprias.
+                            </p>
+                        </div>
+
+                        <img src="../img/o que é.jpg" alt="">
+
+                    </div>
+                </div>
+
+        </section>
+
+        <div class="divisao"></div>
+
+        <section id="historia" class="historia">
+
+            <div class="coluna_historia">
+
+                <div class="row">
+
+                    <div class="coluna">
+
+                        <h1>A historia da musica</h1>
+
+                        <div class="texto">
+                            <p>A música é um dos principais elementos da nossa cultura.
+                                Há indícios de que desde a pré-história já se produzia música,
+                                provavelmente como conseqüência da observação dos sons da natureza.
+                                É de cerca do ano de 60.000 a.C. o vestígio de uma flauta de osso e de 3.000 a.C.
+                                a presença de liras e harpas na Mesopotâmia
+                            </p>
+
+                            <p>Música é uma palavra de origem grega - vem de musiké téchne,
+                                a arte das musas - e se constitui, basicamente, de uma sucessão de sons,
+                                entremeados por curtos períodos de silêncio, organizada ao longo de um determinado
+                                tempo.
+                            </p>
+
+                            <p>Assim, é uma combinação de elementos sonoros que são percebidos pela audição.
+                                Isso inclui variações nas características do som, tais como duração, altura,
+                                intensidade e timbre, que podem ocorrer em diferentes ritmos, melodias ou harmonias.
+                            </p>
+                        </div>
+
+                        <img src="../img/piano-1655558_1920.jpg" alt="">
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+        <div class="divisao"></div>
+
+    </div>
+
+    <footer class="footer">
+
+    </footer>
+
+    <div id="modal-login" class="container_modal">
+        <div class="modal">
+            <button class="close">X</button>
+
+            <h1>Login</h1>
+
+            <form id="form_login" method="post" onsubmit="return entrar()">
+                Usuário: <br>
+                <input type="text" name="email">
+                <br>
+                Senha: <br>
+                <input type="password" name="senha">
+                <br> <br>
+                <button id="btn_entrar" class="btn_menu">Entrar</button>
+            </form>
+
+        </div>
+
+    </div>
+
+    <div id="modal-cadastro" class="container_modal">
+        <div class="modal_cadastro">
+            <button class="close">X</button>
+
+            <h1>Cadastro</h1>
+
+            <form id="form_login" method="post" onsubmit="return entrar()">
+                Nome: <br>
+                <input type="text" name="email">
+                <br>
+                Login: <br>
+                <input type="text" name="login">
+                <br> 
+                Senha: <br>
+                <input type="password" name="senha">
+                <br> <br>
+                Sexo: <br>
+                <select name="sexo" id="1">
+                    <option value="0">--</option>
+                    <option value="1">Masculino</option>
+                    <option value="2">Feminino</option>
+                    <option value="3">Outro</option>
+                </select>
+                <br> <br>
+                Email: <br>
+                <input type="text" name="email">
+                <br> <br>
+                <button id="btn_entrar" value="Cadastrar" class="btn_menu">Cadastrar</button>
+            </form>
+
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>
+
+<script>
+
+     function iniciaModal(modalId) {
+        const modal = document.getElementById(modalId);
+        if (modal) {
+            modal.classList.add('mostrar');
+            modal.addEventListener('click', (e) => {
+                if (e.target.id == modalId || e.target.className == 'close') {
+                    modal.classList.remove('mostrar');
+                }
+            })
+        }
+    }
+
+    const login_pg = document.querySelector('#iniciar');
+    login_pg.addEventListener('click', () => iniciaModal('modal-login'));
+
+    const cadastro = document.querySelector('#cadastro');
+    cadastro.addEventListener('click', () => iniciaModal('modal-cadastro'));
+
+
+    function entrar() {
+        aguardar();
+        var formulario = new URLSearchParams(new FormData(form_login));
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            body: formulario
+        }).then(resposta => {
+
+            if (resposta.ok) {
+
+                resposta.json().then(json => {
+
+                    sessionStorage.login_usuario_meuapp = json.email;
+                    sessionStorage.nome_usuario_meuapp = json.nome;
+
+                    window.location.href = 'tempo-real.html';
+                });
+
+            } else {
+
+                console.log('Erro de login!');
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    finalizar_aguardar(texto);
+                });
+            }
+        });
+
+        return false;
+    }
+
+    function aguardar() {
+        btn_entrar.disabled = true;
+        img_aguarde.style.visibility = 'visible';
+        div_erro.style.visibility = 'hidden';
+    }
+
+    function finalizar_aguardar(resposta) {
+        btn_entrar.disabled = false;
+        img_aguarde.style.visibility = 'hidden';
+        div_erro.style.visibility = 'visible';
+        div_erro.innerHTML = resposta;
+    }
+
+    function cadastrar() {
+        aguardar();
+        var formulario = new URLSearchParams(new FormData(form_cadastro));
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            body: formulario
+        }).then(function (response) {
+            
+            if (response.ok) {
+
+                window.location.href='beneficios.html';
+
+            } else {
+
+                console.log('Erro de cadastro!');
+                response.text().then(function (resposta) {
+                    div_erro.innerHTML = resposta;
+                });
+                finalizar_aguardar();
+            }
+        });
+
+        return false;
+    }
+
+    
+
+</script>
