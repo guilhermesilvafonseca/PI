@@ -1,0 +1,273 @@
+body{
+    background-color: cyan;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+    font-size: 1.2em;
+    animation: degrade 10s ease alternate infinite;
+    background: linear-gradient(-35deg, #786fa6,#f8a5c2, #63cdda, #ea8685, #596275) no-repeat;
+    background-size: 300% 300%;
+
+}
+
+/* .table{
+    box-shadow: inset 5px 10px 10px rgba(119, 119, 119, 0.609);
+    background-color: blue;
+    width: 30px;
+    height: 20px;
+    text-align: center;
+    
+} */
+
+.letras{
+    box-shadow: inset 5px 10px 10px rgba(119, 119, 119, 0.609);
+    background-color: white;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+}
+
+#div_mae{
+    /* background-color: red; */
+    width: 50vw;
+    height: 71vh;
+    margin: 5% 0 0 25%;
+}
+
+#questoes{
+    display: flex;
+    margin: -20% 0 0 70%;
+    /* background-color: red; */
+    width: 25vw;
+    height: 20vh;
+    text-align: center;
+    border-radius: 30px;
+
+}
+
+@keyframes degrade { 
+    0% {
+        background-position: 0 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0 50%;
+
+    }
+
+}
+
+#questao2{
+    display: none;
+}
+
+#questao3{
+    display: none;
+}
+
+#questao4{
+    display: none;
+}
+
+#questao5{
+    display: none;
+}
+
+#questao6{
+    display: none;
+}
+
+#questao7{
+    display: none;
+}
+
+#questao8{
+    display: none;
+}
+
+#questao9{
+    display: none;
+}
+
+#questao10{
+    display: none;
+}
+
+#questao11{
+    display: none;
+}
+
+#questao12{
+    display: none;
+}
+
+#questao13{
+    display: none;
+}
+
+#questao14{
+    display: none;
+}
+
+#questao15{
+    display: none;
+}
+
+#questao16{
+    display: none;
+}
+
+/* modal  */
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .5);
+    position: fixed;
+    top: 0%;
+    left: 0px;
+    z-index: 2000;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.container.mostrar {
+    display: flex;
+
+}
+
+.mostrar {
+    animation: modal .5s;
+}
+
+h1 {
+    margin:0 0 50px 0;
+    color: black;
+}
+
+.modal {
+    background-color: white;
+    width: 500px;
+    height: 400px;
+    padding: 40px;
+    box-shadow: 7px 13px 10px 5px rgb(114, 114, 114);
+    position: relative;
+    text-align: center;
+    border-radius: 30px;
+}
+
+@keyframes modal {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -60px, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.close {
+    position: absolute;
+    top: -30px;
+    right: -30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    /* border: 4px solid gray; */
+    /* background-color: rgb(231, 114, 114); */
+    cursor: pointer;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, .3);
+}
+
+#finalizar{
+    display: none;
+}
+
+button{
+    border-radius: 30px;
+}
+
+input{
+    border-radius: 30px;
+}
+
+
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+
+.menu{
+    width: 2vw;
+    height: 5vh;
+    cursor: pointer;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+ul{
+    list-style: none;
+    /* background-color: green; */
+    position: absolute;
+    top: 60px;
+    width: 100%;
+    height: 100%;
+}
+
+#check{
+    display: none;
+}
+    
+nav{
+    background-color: #006eff8e;
+    position: absolute;
+    width: 20vw;
+    height: 100%;
+    left: -23vw;
+    transition: all .5s;
+ 
+}
+
+a{
+    /* background-color: rgba(0, 0, 255, 0.363); */
+    display: block;
+    padding: 20px 5px 20px 5px;
+    color: white;
+    
+}
+
+a:hover{
+    /* background-color: cyan; */
+    color: white;
+}
+
+label{
+    /* background-color: rgba(255, 0, 0, 0.219); */
+    padding: 15px;
+    position: absolute;
+    z-index: 1;
+    
+}
+
+#check:checked ~ nav{
+    transform: translateX(22vw);
+}
+
+.menu_beneficios{
+    width: 2vw;
+    height: 5vh;
+    cursor: pointer;
+}
