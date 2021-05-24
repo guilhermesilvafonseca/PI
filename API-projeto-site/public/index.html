@@ -6,13 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/menu.css">
     <script src="script/script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/48b24e7021.js" crossorigin="anonymous"></script>
     <title>Site</title>
 </head>
 
 <body>
-    <input type="checkbox" id="check">
+    <!-- <input type="checkbox" id="check">
 
     <label for="check">
         <img class="menu" src="img/list.png" alt="">
@@ -31,9 +33,39 @@
             <button class="btn_menu" id="cadastro">Cadastrar</button>
         </ul>
 
+    </nav> -->
+
+    <nav>
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+
+            <li>
+                <a href="">
+                    HISTORIA
+                    <img src="img/seta.png" width="12px" alt="">
+                </a>
+
+                <ul>
+                    <li><a href="index.html#significado">O que é musica?</a></li>
+                    <li><a href="index.html#historia">A historia da musica</a></li>
+                </ul>
+
+            </li>
+
+            <li><a href="beneficios.html">BENEFICIOS</a></li>
+
+            <li><a href="generos.html">GENEROS DE MUSICAS</a></li>
+
+            <li><a href="somos.html">SOMOS</a></li>
+
+        </ul>
+
+        <button class="btn_menu position" id="iniciar">Logar</button>
+        <button class="btn_menu" id="cadastro"><a href="cadastro.html">Cadastrar</a></button>
     </nav>
 
 
+    <div class="divisao"></div>
 
     <section id="home" class="header">
 
@@ -59,13 +91,15 @@
 
     </section>
 
+    
+
     <div class="pag1">
 
         <div class="divisao"></div>
 
 
         <section id="significado" class="informacoes">
-            <!-- <audio id="audioinfo" src="cogulandia.mpeg" autoplay></audio> -->
+            
             <div class="container">
 
                 <div class="row">
@@ -139,8 +173,9 @@
     </div>
 
     <footer class="footer">
-
+        <h5>Feito com amor por um aluno bandtec</h5>
     </footer>
+
 
     <div id="modal-login" class="container_modal">
         <div class="modal">
@@ -155,13 +190,14 @@
                 Senha: <br>
                 <input type="password" class="input_login" name="senha">
                 <br> <br>
-                <button id="btn_entrar" class="btn_menu">Entrar</button>
+                <button id="btn_entrar" class="btn_menu btn_login">Entrar</button>
             </form>
+
 
         </div>
 
     </div>
-
+<!-- 
     <div id="modal-cadastro" class="container_modal">
         <div class="modal_cadastro">
             <h1>Faça aqui seu cadastro!</h1>
@@ -190,12 +226,12 @@
                 </div>
 
             </div>
-                <!-- <button id="btn_entrar" value="Cadastrar" class="btn_menu">Cadastrar</button> -->
+
             </form>
 
         </div>
 
-    </div>
+    </div> -->
 
 
 </body>
@@ -204,7 +240,7 @@
 
 <script>
 
-     function iniciaModal(modalId) {
+    function iniciaModal(modalId) {
         const modal = document.getElementById(modalId);
         if (modal) {
             modal.classList.add('mostrar');
@@ -219,9 +255,8 @@
     const login_pg = document.querySelector('#iniciar');
     login_pg.addEventListener('click', () => iniciaModal('modal-login'));
 
-    const cadastro = document.querySelector('#cadastro');
-    cadastro.addEventListener('click', () => iniciaModal('modal-cadastro'));
-
+    // const cadastro = document.querySelector('#cadastro');
+    // cadastro.addEventListener('click', () => iniciaModal('modal-cadastro'));
 
     function entrar() {
         aguardar();
@@ -238,7 +273,7 @@
                     sessionStorage.login_usuario_meuapp = json.login;
                     sessionStorage.nome_usuario_meuapp = json.nome;
 
-                    window.location.href = 'apps.html';
+                    window.location.href = 'teste.html';
 
                 });
 
@@ -269,31 +304,31 @@
         div_erro.innerHTML = resposta;
     }
 
-    function cadastrar() {
-        aguardar();
-        var formulario = new URLSearchParams(new FormData(form_cadastro));
-        fetch("/usuarios/cadastrar", {
-            method: "POST",
-            body: formulario
-        }).then(function (response) {
-            
-            if (response.ok) {
+    // function cadastrar() {
+    //     aguardar();
+    //     var formulario = new URLSearchParams(new FormData(form_cadastro));
+    //     fetch("/usuarios/cadastrar", {
+    //         method: "POST",
+    //         body: formulario
+    //     }).then(function (response) {
 
-                window.location.href='index.html';
+    //         if (response.ok) {
 
-            } else {
+    //             window.location.href = 'index.html';
 
-                console.log('Erro de cadastro!');
-                response.text().then(function (resposta) {
-                    div_erro.innerHTML = resposta;
-                });
-                finalizar_aguardar();
-            }
-        });
+    //         } else {
 
-        return false;
-    }
+    //             console.log('Erro de cadastro!');
+    //             response.text().then(function (resposta) {
+    //                 div_erro.innerHTML = resposta;
+    //             });
+    //             finalizar_aguardar();
+    //         }
+    //     });
 
-    
+    //     return false;
+    // }
+
+
 
 </script>
