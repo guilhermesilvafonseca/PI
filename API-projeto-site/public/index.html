@@ -197,41 +197,7 @@
         </div>
 
     </div>
-<!-- 
-    <div id="modal-cadastro" class="container_modal">
-        <div class="modal_cadastro">
-            <h1>Faça aqui seu cadastro!</h1>
-            <div class="formulario">
-                <form id="form_cadastro" method="post" onsubmit="return cadastrar()">
-                    Nome completo
-                    <input type="text" name="nome" class="input-padrao" autofocus="autofocus"
-                        placeholder="Nome e sobrenome" required minlength="4">
 
-                    login
-                    <input type="text" name="login" class="input-padrao" placeholder="seu nome de usuário" required
-                        minlength="4">
-
-                    Senha
-                    <input type="password" name="senha" class="input-padrao" placeholder="*************" required
-                        minlength="4">
-
-
-                    <input type="submit" id="btn_entrar" value="Cadastrar" class="btn-green">
-                </form>
-
-                <img src="aguarde-orange.gif" id="img_aguarde" style="display: none; width:100px">
-
-                <div id="div_erro" style="background-color: sandybrown; color: maroon; display: none;">
-                    Erro no cadastro
-                </div>
-
-            </div>
-
-            </form>
-
-        </div>
-
-    </div> -->
 
 
 </body>
@@ -259,7 +225,8 @@
     // cadastro.addEventListener('click', () => iniciaModal('modal-cadastro'));
 
     function entrar() {
-        aguardar();
+        // event.preventDefault()
+        // aguardar();
         var formulario = new URLSearchParams(new FormData(form_login));
         fetch("/usuarios/autenticar", {
             method: "POST",
@@ -273,7 +240,7 @@
                     sessionStorage.login_usuario_meuapp = json.login;
                     sessionStorage.nome_usuario_meuapp = json.nome;
 
-                    window.location.href = 'teste.html';
+                    window.location.href = 'painel.html';
 
                 });
 
@@ -290,45 +257,5 @@
 
         return false;
     }
-
-    function aguardar() {
-        btn_entrar.disabled = true;
-        img_aguarde.style.visibility = 'visible';
-        div_erro.style.visibility = 'hidden';
-    }
-
-    function finalizar_aguardar(resposta) {
-        btn_entrar.disabled = false;
-        img_aguarde.style.visibility = 'hidden';
-        div_erro.style.visibility = 'visible';
-        div_erro.innerHTML = resposta;
-    }
-
-    // function cadastrar() {
-    //     aguardar();
-    //     var formulario = new URLSearchParams(new FormData(form_cadastro));
-    //     fetch("/usuarios/cadastrar", {
-    //         method: "POST",
-    //         body: formulario
-    //     }).then(function (response) {
-
-    //         if (response.ok) {
-
-    //             window.location.href = 'index.html';
-
-    //         } else {
-
-    //             console.log('Erro de cadastro!');
-    //             response.text().then(function (resposta) {
-    //                 div_erro.innerHTML = resposta;
-    //             });
-    //             finalizar_aguardar();
-    //         }
-    //     });
-
-    //     return false;
-    // }
-
-
 
 </script>
