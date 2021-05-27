@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/menu.css">
+    <script type="text/javascript" src="funcoes.js"></script>
     <title>Document</title>
 </head>
 
@@ -14,13 +15,19 @@
     <nav>
         <ul>
             <li><a href="index.html">HOME/LOGOUT</a></li>
-            
+
             <li><a href="painel.html">PAINEL</a></li>
 
             <li><a href="apps.html">APLICATIVOS RECOMENDADOS</a></li>
 
             <li><a href="cruzadinha.html">DESAFIO</a></li>
 
+            <div class="img-user">
+                <div class="nome">
+                    <b id="b_usuario"></b>
+                </div>
+                <img src="img/user.png" alt="">
+            </div>
         </ul>
 
     </nav>
@@ -328,7 +335,15 @@
         </section>
 
     </div>
-    
+
 </body>
 
 </html>
+
+<script>
+
+    let usuario;
+
+    verificar_autenticacao();
+
+</script>

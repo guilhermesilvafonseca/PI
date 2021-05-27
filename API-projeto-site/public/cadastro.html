@@ -32,49 +32,73 @@
 
             <li><a href="generos.html">GENEROS DE MUSICAS</a></li>
 
+            <li><a href="cadastro.html">LOGAR / CADASTRAR</a></li>
+
         </ul>
 
-        <button class="btn_menu position" id="iniciar">Logar</button>
-        <button class="btn_menu" id="cadastro"><a href="">Cadastrar</a></button>
+        <!-- <button class="btn_menu position" id="iniciar">Logar</button>
+        <button class="btn_menu" id="cadastro"><a href="">Cadastrar</a></button> -->
     </nav>
 
 
     <div class="divisao"></div>
 
-    <div class="contato">
-        <div class="container_cadastro">
-            <h1>Faça aqui seu cadastro!</h1>
-            <div class="formulario">
-                <form id="form_cadastro" method="post" onsubmit="return cadastrar()">
-                    Nome completo <br>
-                    <input type="text" name="nome" class="input-padrao" autofocus="autofocus"
-                        placeholder="Nome e sobrenome" required minlength="4"><br><br>
-                    
-                    login <br>
-                    <input type="text" name="login" class="input-padrao" autofocus="autofocus"
-                        placeholder="Login" required minlength="4"><br><br>
-                    
-                    email <br>
-                    <input type="text" name="email" class="input-padrao" autofocus="autofocus"
-                        placeholder="email" required minlength="4"><br><br>
+    <div class="container_formularios">
 
-                    Senha <br>
-                    <input type="password" name="senha" class="input-padrao" placeholder="***************" required
-                        minlength="4"> <br> <br>
+        <div class="container_cadastro">
+
+            <div class="formulario">
+
+                <h1>Cadastre-se</h1>
+
+                <form id="form_cadastro" method="post" onsubmit="return cadastrar()">
+
+                    <input type="text" name="nome" class="input-padrao" autofocus="autofocus" placeholder="Nome"
+                        required minlength="4">
+
+
+                    <input type="text" name="login" class="input-padrao" autofocus="autofocus" placeholder="Login"
+                        required minlength="4">
+
+
+                    <input type="text" name="email" class="input-padrao" autofocus="autofocus" placeholder="Email"
+                        required minlength="4">
+
+
+                    <input type="password" name="senha" class="input-padrao" placeholder="Senha" required
+                        minlength="4">
 
 
                     <input type="submit" id="btn_entrar" value="Cadastrar" class="btn_menu">
+                    
                 </form>
-
-                <img src="aguarde-orange.gif" id="img_aguarde" style="display: none; width:100px">
-
-                <div id="div_erro" style="background-color: sandybrown; color: maroon; display: none;">
-                    Erro no cadastro
-                </div>
 
             </div>
 
+
+
+
         </div>
+
+
+        <div class="container_login">
+           
+
+            <h1>Login</h1>
+
+            <form id="form_login" method="post" onsubmit="return entrar()">
+                
+                <input type="text" class="input-padrao" name="login" placeholder="Login" autocomplete="off">
+                
+                <input type="password" class="input-padrao" placeholder="Senha" name="senha">
+                                
+                <button id="btn_entrar" class="btn_menu">Entrar</button>
+
+            </form>
+
+        </div>
+
+
     </div>
 
     <div class="divisao"></div>
@@ -89,8 +113,42 @@
 
 <script>
 
+      function entrar() {
+        // event.preventDefault()
+        // aguardar();
+        var formulario = new URLSearchParams(new FormData(form_login));
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            body: formulario
+        }).then(resposta => {
+
+            if (resposta.ok) {
+
+                resposta.json().then(json => {
+
+                    sessionStorage.login_usuario_meuapp = json.login;
+                    sessionStorage.nome_usuario_meuapp = json.nome;
+
+                    window.location.href = 'painel.html';
+
+                });
+
+            } else {
+
+                console.log('Erro de login!');
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    finalizar_aguardar(texto);
+                });
+            }
+        });
+
+        return false;
+    }
+
     function cadastrar() {
-        aguardar();
+        // aguardar();
         var formulario = new URLSearchParams(new FormData(form_cadastro));
         fetch("/usuarios/cadastrar", {
             method: "POST",
@@ -113,16 +171,5 @@
         return false;
     }
 
-    function aguardar() {
-        btn_entrar.disabled = true;
-        img_aguarde.style.display = 'block';
-        div_erro.style.display = 'none';
-    }
-
-    function finalizar_aguardar() {
-        btn_entrar.disabled = false;
-        img_aguarde.style.display = 'none';
-        div_erro.style.display = 'block';
-    }
-
+   
 </script>

@@ -56,12 +56,12 @@
 
             <li><a href="generos.html">GENEROS DE MUSICAS</a></li>
 
-            <li><a href="somos.html">SOMOS</a></li>
+            <li><a href="cadastro.html">LOGAR / CADASTRAR</a></li>
 
         </ul>
 
-        <button class="btn_menu position" id="iniciar">Logar</button>
-        <button class="btn_menu" id="cadastro"><a href="cadastro.html">Cadastrar</a></button>
+        <!-- <button class="btn_menu position" id="iniciar">Logar</button>
+        <button class="btn_menu" id="cadastro"><a href="">Cadastrar</a></button> -->
     </nav>
 
 
@@ -177,7 +177,7 @@
     </footer>
 
 
-    <div id="modal-login" class="container_modal">
+    <!-- <div id="modal-login" class="container_modal">
         <div class="modal">
             <button class="close">X</button>
 
@@ -196,7 +196,7 @@
 
         </div>
 
-    </div>
+    </div> -->
 
 
 
@@ -206,56 +206,58 @@
 
 <script>
 
-    function iniciaModal(modalId) {
-        const modal = document.getElementById(modalId);
-        if (modal) {
-            modal.classList.add('mostrar');
-            modal.addEventListener('click', (e) => {
-                if (e.target.id == modalId || e.target.className == 'close') {
-                    modal.classList.remove('mostrar');
-                }
-            })
-        }
-    }
+    // function iniciaModal(modalId) {
+    //     const modal = document.getElementById(modalId);
+    //     if (modal) {
+    //         modal.classList.add('mostrar');
+    //         modal.addEventListener('click', (e) => {
+    //             if (e.target.id == modalId || e.target.className == 'close') {
+    //                 modal.classList.remove('mostrar');
+    //             }
+    //         })
+    //     }
+    // }
 
-    const login_pg = document.querySelector('#iniciar');
-    login_pg.addEventListener('click', () => iniciaModal('modal-login'));
+    // const login_pg = document.querySelector('#iniciar');
+    // login_pg.addEventListener('click', () => iniciaModal('modal-login'));
 
     // const cadastro = document.querySelector('#cadastro');
     // cadastro.addEventListener('click', () => iniciaModal('modal-cadastro'));
 
-    function entrar() {
-        // event.preventDefault()
-        // aguardar();
-        var formulario = new URLSearchParams(new FormData(form_login));
-        fetch("/usuarios/autenticar", {
-            method: "POST",
-            body: formulario
-        }).then(resposta => {
 
-            if (resposta.ok) {
 
-                resposta.json().then(json => {
+    // function entrar() {
+    //     // event.preventDefault()
+    //     // aguardar();
+    //     var formulario = new URLSearchParams(new FormData(form_login));
+    //     fetch("/usuarios/autenticar", {
+    //         method: "POST",
+    //         body: formulario
+    //     }).then(resposta => {
 
-                    sessionStorage.login_usuario_meuapp = json.login;
-                    sessionStorage.nome_usuario_meuapp = json.nome;
+    //         if (resposta.ok) {
 
-                    window.location.href = 'painel.html';
+    //             resposta.json().then(json => {
 
-                });
+    //                 sessionStorage.login_usuario_meuapp = json.login;
+    //                 sessionStorage.nome_usuario_meuapp = json.nome;
 
-            } else {
+    //                 window.location.href = 'painel.html';
 
-                console.log('Erro de login!');
+    //             });
 
-                resposta.text().then(texto => {
-                    console.error(texto);
-                    finalizar_aguardar(texto);
-                });
-            }
-        });
+    //         } else {
 
-        return false;
-    }
+    //             console.log('Erro de login!');
+
+    //             resposta.text().then(texto => {
+    //                 console.error(texto);
+    //                 finalizar_aguardar(texto);
+    //             });
+    //         }
+    //     });
+
+    //     return false;
+    // }
 
 </script>
