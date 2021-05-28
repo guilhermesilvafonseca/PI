@@ -458,80 +458,13 @@ label{
     
 }
 
-
-/* modal */
-
-.container_modal {
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, .5);
-    position: fixed;
-    top: 0%;
-    left: 0px;
-    z-index: 2000;
-    display: none;
-    justify-content: center;
-    align-items: center;
-}
-
-.modal_cadastro{
-    background-color: #bef4fdf5;
-    width: 50vw;
-    height: 70vh;
-    padding: 40px;
-    box-shadow: 7px 13px 10px 5px rgb(114, 114, 114);
-    position: relative;
-    text-align: center;
-    border-radius: 30px;
-}
-
-.modal_cadastro input{
-    border-radius: 30px;
-    margin: 1vh 0 15px 0;
-    background-color: #b5deffab;
-}
-
-select{
-    background-color: #b5deffab;
+.container_favoritos{
+    width: 70vw;
+    padding: 2% 0 0 25%;
 }
 
 
 
-.container_modal.mostrar {
-    display: flex;
-
-}
-
-.mostrar {
-    animation: modal .3s;
-}
-
-.modal h1 {
-    margin:0 0 50px 0;
-}
-
-.modal {
-    background-color:  #6e0000 ;
-    width: 25vw;
-    height: 50vh;
-    padding: 40px;
-    box-shadow: 7px 13px 10px 5px rgb(114, 114, 114);
-    position: relative;
-    text-align: center;
-    border-radius: 30px;
-    color: white;
-}
-
-.modal input {
-    background-color: #0000;
-    /* color: white; */
-    border-radius: 30px;
-    width: 50%;
-    height: 25px;
-    text-align: center;
-    margin: 2vh;
-    color: white;
-}
 
 ::-webkit-input-placeholder {
     color: black;
@@ -549,23 +482,10 @@ a {
     animation: none;
     color: black;
     text-decoration: none;
-
 }
 
-@keyframes modal {
-    from {
-        opacity: 0;
-        transform: translate3d(0, -60px, 0);
-    }
-
-    to {
-        opacity: 1;
-        transform: translate3d(0, 0, 0);
-    }
-}
 
 .apps{
-    /* background-color: rgba(255, 255, 0, 0.493); */
     height: 70vh;
     background-image: url(../img/fundoazul.jpg);
     background-position: center top;
@@ -575,8 +495,6 @@ a {
 }
 
 .header_apps{
-   
-    /* background-color: rgba(119, 119, 119, 0.623); */
     position: absolute;
     height: 30vh;
     width: 40vw;
@@ -607,18 +525,19 @@ a {
 }
 
 .container_login{
-    padding: 2% 5% 0 0 ;
+    padding: 5% 0 0 30% ;
     width: 50%;
     height: 70%;
     /* background-color: blue; */
 }
 
 .container_cadastro{
-    padding: 2% 0 0 10% ;
-    width: 50%;
+    padding: 2% 0 0 25% ;
+    width: 70%;
     height: 70%;
     /* align-items: center; */
     /* background-color: red; */
+    /* display: none; */
     
 }
 
@@ -628,6 +547,11 @@ a {
 }
 
 #form_login{
+    display: flex;
+    flex-direction: column;
+}
+
+#form_favoritos{
     display: flex;
     flex-direction: column;
 }
