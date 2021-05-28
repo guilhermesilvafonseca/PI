@@ -22,7 +22,7 @@ body{
 }
 
 .header{
-    background-image: url(../img/patra.jpg);
+    background-image: url(../img/cinza.jpg);
     background-position: center top;
     background-repeat: no-repeat;
     background-size: cover;
@@ -40,7 +40,7 @@ body{
 .header h1{
     margin: 10% 0 0 15%;
     font-size: 3em;
-    color: 	#fdd700;
+    /* color: 	#fdd700; */
     position: absolute;
 }
 
@@ -77,53 +77,21 @@ body{
 }
 
 .btn_menu{
-    /* margin: 10px -50% 0 10%; */
-    border-radius: 30px;
+    border-radius: 6px;
     width: 7vw;
     height: 3.5vh;
-    background-color: rgba(255, 255, 255, .3);
+    /* background-color: rgba(255, 255, 255, .3); */
     font-size: .9rem;
     cursor: pointer;
     
-    text-transform: inherit;
+    /* text-transform: inherit; */
     font-size: 15px;
     font-weight: bold;
-
-    border: 2px solid #000000;
+    /* border: 2px solid #000000; */
 
     margin: 3vh 0 0 0;
 
 }
-
-.position{
-    margin: 5vh 0 0 10vw;
-}
-
-.btn_menu:hover{
-    animation: bounce 1s;
-}
-
-.btn_login{
-    background: #ff00377e;
-    border-radius: 30px;
-    width: 7vw;
-    height: 3.5vh;
-    font-size: .9rem;
-    cursor: pointer;
-    color: white;
-    
-    text-transform: inherit;
-    font-weight: bold;
-
-    border: 2px solid #a10707;
-}
-
-.btn:hover{
-    background: rgba(0, 0, 0, 0);
-    color: #0000ff ;
-    box-shadow: inset 0 0 0 1px #0000ff;
-}
-
 
 .coluna_informacoes{
     text-align: center;
@@ -136,7 +104,8 @@ body{
 }
 
 .informacoes{
-    background-color: rgba(0, 0, 0, 0.089);
+    /* background: linear-gradient(-135deg, #caebf2, #438496); */
+    background-color: #a9a9a994;
     height: 60vh;
 }
 
@@ -231,6 +200,9 @@ body{
     color: #fdff7e;
 } */
 
+.info_beneficios{
+    background-image: url(../img/fundobeneficios.jpg);
+}
 
 .info_beneficios img{
     width: 40vw;
@@ -273,7 +245,7 @@ body{
 }
 
 .header_estilos{
-    background-image: url(../img/vitrola.gif);
+    background-image: url(../img/fundogeneros.jpg);
     background-position: center top;
     background-repeat: no-repeat;
     background-size: cover;
@@ -286,11 +258,15 @@ body{
 
 
 .coluna_estilos{
-    background-color: rgba(117, 117, 117, 0.39);
+    /* background-color: rgba(117, 117, 117, 0.39); */
     border-radius: 30px;
     position: absolute;
     margin: 10% 0 0 25%;
-    color: rgb(200, 200, 255);
+    /* color: rgb(200, 200, 255); */
+}
+
+.coluna_estilos h1{
+    font-size: 3em;
 }
 
 .generos{
@@ -520,9 +496,6 @@ select{
 }
 
 
-.modal_cadastro h1{
-    margin:0 0 5vh 0;
-}
 
 .container_modal.mostrar {
     display: flex;
@@ -594,7 +567,7 @@ a {
 .apps{
     /* background-color: rgba(255, 255, 0, 0.493); */
     height: 70vh;
-    background-image: url(../img/aps.jpg);
+    background-image: url(../img/fundoazul.jpg);
     background-position: center top;
     background-repeat: no-repeat;
     background-size: cover;
@@ -603,7 +576,7 @@ a {
 
 .header_apps{
    
-    background-color: rgba(119, 119, 119, 0.623);
+    /* background-color: rgba(119, 119, 119, 0.623); */
     position: absolute;
     height: 30vh;
     width: 40vw;
@@ -618,6 +591,11 @@ a {
 }
 
 .container_formularios{
+    background-image: url(../img/fundocadastro.jpg);
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: scroll;
     height: 80vh;
     /* border: 2px solid red;    */
     /* background: linear-gradient(-135deg, #c850c0, #4158d0); */
@@ -719,10 +697,10 @@ a {
 }
 
 .texto_somos{
-    background-color: rgba(128, 128, 128, 0.514);
+    background-color: rgba(128, 128, 128, 0.219);
     width: 40vw;
     height: 30vh;
-    border-radius: 30px;
+    /* border-radius: 30px; */
     text-align: center;
     position: absolute;
     margin: 20vh 0 0 45vw;

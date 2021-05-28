@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projeto IoT - Sobre</title>
+    <title>Cadastro</title>
     <link rel="stylesheet" href="css/menu.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -32,12 +32,13 @@
 
             <li><a href="generos.html">GENEROS DE MUSICAS</a></li>
 
+            <li><a href="somos.html">SOBRE</a></li>
+
             <li><a href="cadastro.html">LOGAR / CADASTRAR</a></li>
 
         </ul>
 
-        <!-- <button class="btn_menu position" id="iniciar">Logar</button>
-        <button class="btn_menu" id="cadastro"><a href="">Cadastrar</a></button> -->
+       
     </nav>
 
 
@@ -54,15 +55,15 @@
                 <form id="form_cadastro" method="post" onsubmit="return cadastrar()">
 
                     <input type="text" name="nome" class="input-padrao" autofocus="autofocus" placeholder="Nome"
-                        required minlength="4">
+                        required minlength="3" autocomplete="off">
 
 
                     <input type="text" name="login" class="input-padrao" autofocus="autofocus" placeholder="Login"
-                        required minlength="4">
+                        required minlength="4" autocomplete="off">
 
 
                     <input type="text" name="email" class="input-padrao" autofocus="autofocus" placeholder="Email"
-                        required minlength="4">
+                        required minlength="10" autocomplete="off">
 
 
                     <input type="password" name="senha" class="input-padrao" placeholder="Senha" required
@@ -157,7 +158,7 @@
 
             if (response.ok) {
 
-                window.location.href = 'index.html';
+                window.location.href = 'cadastro.html';
 
             } else {
                 console.log('Erro de cadastro!');
@@ -170,6 +171,8 @@
 
         return false;
     }
+
+
 
    
 </script>

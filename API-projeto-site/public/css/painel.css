@@ -1,11 +1,12 @@
 .painel{
-    background: linear-gradient(-135deg, #c850c0, #4158d0);
+    background: linear-gradient(-135deg, #a4b0be, #747d8c,#f1f2f6);
     color: white;
 }
 
 
 .playlists{
     /* background-color: red; */
+    height: 120vh;
 }
 
 .playlists button{
@@ -73,5 +74,5 @@
     border-bottom:2px solid silver;
     font-size: 17px;
     background: rgba(255, 255, 255, 0);
-    color: white;
+    /* color: white; */
 }
