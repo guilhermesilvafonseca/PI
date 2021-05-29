@@ -6,8 +6,8 @@ https://codewithhugo.com/sequelize-data-types-a-practical-guide/
 */
 
 module.exports = (sequelize, DataTypes) => {
-    let Favorito = sequelize.define('favorito',{
-		id: {
+    let Favorito = sequelize.define('Favorito',{
+		idFavoritos: {
 			field: 'idFavoritos',
 			type: DataTypes.INTEGER,
 			primaryKey: true,
@@ -31,7 +31,7 @@ module.exports = (sequelize, DataTypes) => {
 		fkUsuario: {
 			field: 'fkUsuario',
 			type: DataTypes.INTEGER,
-			foreignKey: true
+			allowNull: false
 		}
 	}, 
 	{

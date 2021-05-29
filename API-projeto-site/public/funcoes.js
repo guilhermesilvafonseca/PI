@@ -10,7 +10,7 @@ function verificar_autenticacao() {
     nome_usuario = sessionStorage.nome_usuario_meuapp;
     
     if (login_usuario == undefined)  {
-        // redirecionar_login();
+        redirecionar_login();
     } else {
         b_usuario.innerHTML = nome_usuario;
         validar_sessao();

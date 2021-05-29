@@ -30,14 +30,12 @@
 
             <li><a href="beneficios.html">BENEFICIOS</a></li>
 
-            <li><a href="generos.html">GENEROS DE MUSICAS</a></li>
+            <li><a href="generos.html">GÊNEROS DE MUSICAS</a></li>
 
             <li><a href="somos.html">SOBRE</a></li>
 
-            <li><a href="cadastro.html">CADASTRAR</a></li>
+            <li><a href="cadastro.html">LOGIN / CADASTRAR</a></li>
             
-            <li><a href="login.html">LOGIN</a></li>
-
         </ul>
 
 
@@ -79,9 +77,39 @@
 
         </div>
 
+        <div id="obrigado" class="container_cadastro">
+
+            <div class="form_favoritos">
+
+                <h1>Obrigado por se cadastrar</h1>
+                    <h2>Agora é so logar</h2>
+            </div>
+
+        </div>
+
+        <div id="logando" class="container_login">
+
+
+            <h1>Login</h1>
+
+            <form id="form_login" method="post" onsubmit="return entrar()">
+
+                <input type="text" class="input-padrao" name="login" placeholder="Login" autocomplete="off">
+
+                <input type="password" class="input-padrao" placeholder="Senha" name="senha">
+
+                <button id="btn_entrar" class="btn_menu">Entrar</button>
+
+            </form>
+
+        </div>
+
+        
+
+        
     </div>
 
-    <div class="divisao"></div>
+    <!-- <div class="divisao"></div> -->
 
     <footer class="footer">
         <h5>Feito com amor por um aluno bandtec</h5>
@@ -108,9 +136,8 @@
             if (response.ok) {
 
                 console.log('cadastrou');
-                window.location.href = 'favoritos.html';
-
-
+                agradecimento();
+                
             } else {
                 console.log('Erro de cadastro!');
                 response.text().then(function (resposta) {
@@ -123,5 +150,49 @@
         return false;
     }
 
-    
+    function entrar() {
+        // event.preventDefault()
+        var formulario = new URLSearchParams(new FormData(form_login));
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            body: formulario
+        }).then(resposta => {
+
+            if (resposta.ok) {
+
+                resposta.json().then(json => {
+
+                    sessionStorage.login_usuario_meuapp = json.login;
+                    sessionStorage.nome_usuario_meuapp = json.nome;
+                    sessionStorage.id_usuario_meuapp = json.idUsuario; 
+
+                    window.location.href = 'painel.html';
+
+                });
+
+            } else {
+
+                console.log('Erro de login!');
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    finalizar_aguardar(texto);
+                });
+            }
+        });
+
+        return false;
+    }
+
+        
+    function agradecimento(){
+        document.getElementById('cast').style.display = 'none'
+        document.getElementById('obrigado').style.display = 'block'
+    };
+
+    // function chatao(){
+    //     window.location.href = 'painel.html';
+    // };
+
+
 </script>

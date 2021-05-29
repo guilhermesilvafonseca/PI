@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var sequelize = require('../models').sequelize;
 var Usuario = require('../models').Usuario;
+var Favorito = require('../models').Favorito;
 
 let sessoes = [];
 
@@ -105,6 +106,28 @@ router.get('/', function(req, res, next) {
 		console.error(erro);
 		res.status(500).send(erro.message);
   	});
+});
+
+
+router.post('/favoritar/:idUsuario', function(req, res, next) {
+	
+	let idUsuario = req.params.idUsuario;
+	
+    console.log("Iniciando Publicação..." + idUsuario)
+
+    Favorito.create({
+        genero: req.body.genero,
+        artista: req.body.artista,
+        musica: req.body.musica,
+        fkUsuario: idUsuario
+    }).then(resultado => {
+        console.log("Cadastrado favoritos!!");
+        res.send(resultado);
+    }).catch(erro => {
+        console.log('DEU UM ERRINHO')
+        console.error(erro);
+        res.status(500).send(erro.message);
+    })
 });
 
 module.exports = router;

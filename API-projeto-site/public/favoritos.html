@@ -7,39 +7,27 @@
     <title>Projeto IoT - Sobre</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/menu.css">
+    <script type="text/javascript" src="funcoes.js"></script>
 </head>
 
 <body>
     <!--header inicio-->
     <nav>
         <ul>
-            <li><a href="index.html">HOME</a></li>
 
-            <li>
-                <a href="">
-                    HISTORIA
-                    <img src="img/seta.png" width="12px" alt="">
-                </a>
+            <li><a href="painel.html">PAINEL</a></li>
 
-                <ul>
-                    <li><a href="index.html#significado">O que é musica?</a></li>
-                    <li><a href="index.html#historia">A historia da musica</a></li>
-                </ul>
+            <li><a href="apps.html">APLICATIVOS RECOMENDADOS</a></li>
 
-            </li>
+            <li><a href="favoritos.html">ADICIONAR FAVORITOS</a></li>
 
-            <li><a href="beneficios.html">BENEFICIOS</a></li>
-
-            <li><a href="generos.html">GENEROS DE MUSICAS</a></li>
-
-            <li><a href="somos.html">SOBRE</a></li>
-
-            <li><a href="cadastro.html">CADASTRAR</a></li>
-
-            <li><a href="login.html">LOGIN</a></li>
-
+            <div class="img-user">
+                <div class="nome">
+                    <b id="b_usuario"></b>
+                </div>
+                <img src="img/user.png" alt="">
+            </div>
         </ul>
-
 
     </nav>
 
@@ -47,37 +35,39 @@
     <div class="divisao"></div>
     <!--header fim-->
 
-    <div class="container_formularios">
+    <div id="favoritos" class="container_favoritos">
 
-        <div id="favoritos" class="container_favoritos">
+        <div class="form_favoritos">
 
-            <div class="form_favoritos">
+            <h1>Cadastrar favoritos</h1> <br>
 
-                <h1>Falta Pouco...</h1>
+            <h2>Você pode cadastrar quantas vezes quiser,
+                isso nos ajuda com pesquisas.
+            </h2> <br>
 
-                <form id="form_favoritos" method="post" onsubmit="return favoritos()">
+            <form id="form_favoritos" method="post" onsubmit="return favoritos()">
 
-                    <input type="text" name="genero" class="input-padrao" autofocus="autofocus"
-                        placeholder="Genero Favorito" required minlength="3" autocomplete="off">
-
-
-                    <input type="text" name="musica" class="input-padrao" autofocus="autofocus"
-                        placeholder="Musica Favorita" required minlength="4" autocomplete="off">
+                <input type="text" name="genero" class="input-padrao" autofocus="autofocus"
+                    placeholder="Genero Favorito" required minlength="2" autocomplete="off">
 
 
-                    <input type="text" name="artista" class="input-padrao iniciar" autofocus="autofocus"
-                        placeholder="Artista Favorito" required minlength="10" autocomplete="off">
+                <input type="text" name="musica" class="input-padrao" autofocus="autofocus"
+                    placeholder="Musica Favorita" required minlength="3" autocomplete="off">
 
 
-                    <input type="submit" id="btn_cadastrar" value="Cadastrar" class="btn_menu">
+                <input type="text" name="artista" class="input-padrao iniciar" autofocus="autofocus"
+                    placeholder="Artista Favorito" required minlength="3" autocomplete="off">
 
-                </form>
 
-            </div>
+                <input type="submit" id="btn_cadastrar" value="Cadastrar" class="btn_menu">
+
+            </form>
 
         </div>
-        
+
     </div>
+
+    <div class="divisao"></div>
 
     <!--footer inicio-->
     <footer class="footer">
@@ -90,30 +80,62 @@
 </html>
 <script>
 
-
     function favoritos() {
-        var formulario = new URLSearchParams(new FormData(form_cadastro));
-        fetch("/usuarios/favorito", {
+        var formulario = new URLSearchParams(new FormData(form_favoritos));
+        var idUsuario = sessionStorage.id_usuario_meuapp;
+        fetch(`/usuarios/favoritar/${idUsuario}`, {
             method: "POST",
             body: formulario
         }).then(function (response) {
 
             if (response.ok) {
 
-                alert('Obrigado por se cadastrar no site');
-                window.location.href = 'login.html';
                 console.log('cadastrou');
+                window.location.href = 'favoritos.html';
 
             } else {
                 console.log('Erro de cadastro!');
                 response.text().then(function (resposta) {
-                    div_erro.innerHTML = resposta;
+
                 });
 
             }
         });
 
         return false;
-    }
+    };
+
+    // function comentar() {
+    //     console.log("Deu Bom HAHA")
+    //     // aguardar();
+    //     var formulario = new URLSearchParams(new FormData(formTopico));
+    //     var idUsuario = sessionStorage.id_usuario_meuapp;
+    //     // var idUsuario = sessionStorage.idUsuario = json.idUsuario;
+    //     // var nomeUsuario = sessionStorage.id_usuario_meuapp;
+    //     console.log("Aqui esta " + `${JSON.stringify(formulario)}`);
+    //     fetch(`/topicos/recuperar/${idUsuario}`, {
+    //         method: "POST",
+    //         body: formulario
+    //    }).then(resposta => {
+    //         console.log("Oi " + `${JSON.stringify(resposta)}`);
+    //         if (resposta.ok) {
+    //             obterPublicacoes();
+
+    //             // finalizarAguardar();
+    //         } else {
+    //             console.log('Erro ao publicar!');
+    //             resposta.text().then(texto => {
+    //                 console.error(texto);
+    //                 // finalizarAguardar(texto);
+    //             });
+    //         }
+    //     });
+
+    //     return false;
+    // }
+
+    let usuario;
+
+    verificar_autenticacao();
 
 </script>

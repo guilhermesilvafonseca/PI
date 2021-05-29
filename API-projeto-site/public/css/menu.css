@@ -29,8 +29,8 @@ a:hover{
 }
 
 nav{
-    /* background: linear-gradient(-135deg, #ffff4a,#fff438); */
-    background-color: #000000;
+    background: linear-gradient(180deg, #000,#7c7c7c);
+    /* background-color: #000000; */
     height: 10vh;
 }
 
