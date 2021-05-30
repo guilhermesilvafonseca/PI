@@ -23,6 +23,16 @@
     border: none;
 }
 
+::-webkit-scrollbar iframe{
+    width: 10px;
+    /* background-color: red; */
+}
+
+::-webkit-scrollbar-thumb iframe{
+    background: linear-gradient(180deg, #000,#7c7c7c,#000);
+    border-radius: 30px;
+}
+
 #esti_rock{
     display: none;
 }

@@ -21,6 +21,9 @@
 
             <li><a href="favoritos.html">ADICIONAR FAVORITOS</a></li>
 
+            <li><a href="estatistica.html">ESTATISTICAS</a></li>
+
+
             <div class="img-user">
                 <div class="nome">
                     <b id="b_usuario"></b>
@@ -47,8 +50,21 @@
 
             <form id="form_favoritos" method="post" onsubmit="return favoritos()">
 
-                <input type="text" name="genero" class="input-padrao" autofocus="autofocus"
-                    placeholder="Genero Favorito" required minlength="2" autocomplete="off">
+                <select name="genero" class="seletao" autofocus required>
+                    <option value="">---</option>
+                    <option value="1">SAMBA</option>
+                    <option value="2">FUNK</option>
+                    <option value="3">TRAP</option>
+                    <option value="4">RAP</option>
+                    <option value="5">PAGODE</option>
+                    <option value="6">ROMANTICA</option>
+                    <option value="7">ROCK</option>
+                    <option value="8">RAP GEEK</option>
+                    <option value="9">SERTANEJO</option>
+                </select>
+
+                <!-- <input type="text" name="genero" class="input-padrao" autofocus="autofocus"
+                    placeholder="Genero Favorito" required minlength="2" autocomplete="off"> -->
 
 
                 <input type="text" name="musica" class="input-padrao" autofocus="autofocus"
@@ -105,35 +121,7 @@
         return false;
     };
 
-    // function comentar() {
-    //     console.log("Deu Bom HAHA")
-    //     // aguardar();
-    //     var formulario = new URLSearchParams(new FormData(formTopico));
-    //     var idUsuario = sessionStorage.id_usuario_meuapp;
-    //     // var idUsuario = sessionStorage.idUsuario = json.idUsuario;
-    //     // var nomeUsuario = sessionStorage.id_usuario_meuapp;
-    //     console.log("Aqui esta " + `${JSON.stringify(formulario)}`);
-    //     fetch(`/topicos/recuperar/${idUsuario}`, {
-    //         method: "POST",
-    //         body: formulario
-    //    }).then(resposta => {
-    //         console.log("Oi " + `${JSON.stringify(resposta)}`);
-    //         if (resposta.ok) {
-    //             obterPublicacoes();
-
-    //             // finalizarAguardar();
-    //         } else {
-    //             console.log('Erro ao publicar!');
-    //             resposta.text().then(texto => {
-    //                 console.error(texto);
-    //                 // finalizarAguardar(texto);
-    //             });
-    //         }
-    //     });
-
-    //     return false;
-    // }
-
+    
     let usuario;
 
     verificar_autenticacao();

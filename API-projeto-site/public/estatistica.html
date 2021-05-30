@@ -6,11 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/menu.css">
-    <link rel="stylesheet" href="css/painel.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="funcoes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <title>Document</title>
 </head>
 
-<body>
+<body onload="teste()">
 
     <nav>
         <ul>
@@ -18,6 +21,8 @@
             <li><a href="painel.html">PAINEL</a></li>
 
             <li><a href="apps.html">APLICATIVOS RECOMENDADOS</a></li>
+
+            <li><a href="favoritos.html">ADICIONAR FAVORITOS</a></li>
 
             <li><a href="estatistica.html">ESTATISTICAS</a></li>
 
@@ -33,8 +38,11 @@
 
     <div class="divisao"></div>
 
-    
+    <div class="div_grafico">
 
+        <canvas id="myChart"></canvas>
+
+    </div>
 
 </body>
 
@@ -45,5 +53,66 @@
     let usuario;
 
     verificar_autenticacao();
+
+    function teste() {
+
+        fetch(`/usuarios/estatistica`)
+            .then(resposta => {
+                if (resposta.ok) {
+                    resposta.json().then(function (resposta) {
+
+                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+
+                        var seletao = [resposta.samba, resposta.funk, resposta.trap, resposta.rap, resposta.pagode, resposta.romantica, resposta.rock, resposta.rap_geek, resposta.sertanejo];
+
+                        var grafico = document.getElementById('myChart');
+
+                        var char = new Chart(grafico, {
+
+                            type: 'pie',
+
+                            data: {
+
+                                labels: ['SAMBA', 'FUNK', 'TRAP', 'RAP', 'PAGODE', 'ROMANTICA', 'ROCK', 'RAP GEEK', 'SERTANEJO'],
+                                datasets: [{
+                                    data: seletao,
+                                    backgroundColor: ['#fc5c65', '#fd9644', '#fed330', '#26de81', '#2bcbba', '#eb3b5a', '#fa8231', '#f7b731', '#20bf6b'],
+                                    
+                                    display: true,
+
+                                    borderColor: ['#fff'],
+
+                                    borderWidth: 1
+
+                                }]
+                            },
+
+                            options: {
+                                plugins:{
+                                    title:{
+                                        display: true,
+                                        text: 'Ranking Gêneros'
+                                    },
+                                    legend:{
+                                        position: 'bottom',
+                                        display:true,
+                                    }
+                                }
+                            }
+                        });
+
+
+                    });
+                } else {
+
+                    console.error('Nenhum dado encontrado ou erro na API');
+                }
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados do banco de dados: ${error.message}`);
+            });
+    }
+
+
 
 </script>

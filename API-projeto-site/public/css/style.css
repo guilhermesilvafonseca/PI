@@ -325,12 +325,15 @@ body{
     width: 35vw;
     height: 30vh;
     margin: 10vh 0 0 15%;
+    text-align: justify;
 }
 
 .texto_direita{
     width: 35vw;
     height: 30vh;
     margin: 10vh 0 0 50%;
+    text-align: justify;
+
 }
 
 .texto_esquerda p{
@@ -543,6 +546,17 @@ a {
     color: white;
 }
 
+.seletao{
+    width: 62.5%;
+    height: 5vh;
+    /* border-bottom:2px solid silver; */
+    background:none;
+    margin-bottom: 3vh;
+    border: 2px solid #ffffff93;
+    /* color: white; */
+    /* background-color: transparent; */
+}
+
 .somos{
     height: 80vh;
     background-image: url(../img/fundo\ somos.jpg);
@@ -619,3 +633,9 @@ a {
     float: left;
 }
 
+.div_grafico{
+    width: 30vw;
+    height: 30vh;
+    margin: auto;
+    margin-top: 5%;
+}
