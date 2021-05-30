@@ -541,7 +541,20 @@ a {
     color: white;
     padding: 10px;
     margin-bottom: 20px;
+    cursor: auto;
 }
+/* 
+.input-padrao:focus{
+    border-color: blue !important;
+}
+
+.input-padrao:invalid{
+    border-color: red;
+}
+
+.input-padrao:valid{
+    border-color: greenyellow;
+} */
 
 .input-padrao::placeholder{
     color: white;
@@ -650,4 +663,16 @@ a {
 
 .icon{
     border-radius: 50%;
+}
+
+#loading{
+    width: 7vw;
+    margin: 0 0 0 30vw;
+    display: none;
+}
+
+#loading_login{
+    width: 7vw;
+    margin: 0 0 0 25vw;
+    display: none;
 }

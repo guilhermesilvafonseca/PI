@@ -85,6 +85,8 @@
 
         </div>
 
+        <img class="loading" id="loading" src="img/loading.gif" alt="">
+
     </div>
 
     <div class="divisao"></div>
@@ -101,6 +103,7 @@
 <script>
 
     function favoritos() {
+        aguardar_cadastro();
         var formulario = new URLSearchParams(new FormData(form_favoritos));
         var idUsuario = sessionStorage.id_usuario_meuapp;
         fetch(`/usuarios/favoritar/${idUsuario}`, {
