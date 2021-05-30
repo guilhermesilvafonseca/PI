@@ -152,20 +152,21 @@ body{
 }
 
 .coluna_historia{
-    text-align: center;
+    text-align: justify;
     /* background-color: red; */
     /* position: relative; */
     width: 50vw;
     height: 75vh;
     color: black;
     margin: 0 0 4vh 45%;
+    
 }
 
 .historia img{
     width: 25vw;
     height: 40vh;
     position: absolute;
-    margin: 10% 0vw 0 -55vw;
+    margin: 10% 0vw 0 -35vw;
     border-radius: 100%;
     /* box-shadow: inset 5px 10px 10px rgba(119, 119, 119, 0.609); */
 }
@@ -238,7 +239,7 @@ body{
     margin: 15vh 0 0 55vw;
     width: 40vw;
     height: 65vh;
-    text-align: center;
+    text-align: justify;
 }
 
 .info_beneficios{
@@ -605,7 +606,7 @@ a {
     background-color: rgba(128, 128, 128, 0.219);
     width: 40vw;
     height: 30vh;
-    text-align: center;
+    text-align: justify;
     position: absolute;
     margin: 20vh 0 0 45vw;
 }
@@ -622,7 +623,7 @@ a {
 .img-user {
     color: white;
     position: absolute;
-    margin: 2vh 0 0 55vw;
+    margin: 2vh 0 0 65vw;
     float: left;   
 }
 
@@ -634,8 +635,19 @@ a {
 }
 
 .div_grafico{
-    width: 30vw;
-    height: 30vh;
+    width: 40vw;
+    /* margin-right: 5vw; */
+    /* float: right; */
     margin: auto;
-    margin-top: 5%;
+    margin-top: 2vh;
+
+}
+
+.explicacao{
+    text-align: center;
+    margin-top: 3vh;
+}
+
+.icon{
+    border-radius: 50%;
 }

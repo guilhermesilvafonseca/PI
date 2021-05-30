@@ -16,6 +16,9 @@
 <body onload="teste()">
 
     <nav>
+
+        <img class="imgnav" src="img/logopag.png" alt="">
+
         <ul>
 
             <li><a href="painel.html">PAINEL</a></li>
@@ -25,6 +28,8 @@
             <li><a href="favoritos.html">ADICIONAR FAVORITOS</a></li>
 
             <li><a href="estatistica.html">ESTATISTICAS</a></li>
+
+            <li><a href="index.html">SAIR</a></li>
 
             <div class="img-user">
                 <div class="nome">
@@ -37,6 +42,13 @@
     </nav>
 
     <div class="divisao"></div>
+
+    <div class="explicacao">
+
+        <h1>Grafico dos generos favoritos dos usuarios do site</h1>
+        
+
+    </div>
 
     <div class="div_grafico">
 
@@ -76,7 +88,7 @@
                                 labels: ['SAMBA', 'FUNK', 'TRAP', 'RAP', 'PAGODE', 'ROMANTICA', 'ROCK', 'RAP GEEK', 'SERTANEJO'],
                                 datasets: [{
                                     data: seletao,
-                                    backgroundColor: ['#fc5c65', '#fd9644', '#fed330', '#26de81', '#2bcbba', '#eb3b5a', '#fa8231', '#f7b731', '#20bf6b'],
+                                    backgroundColor: ['#fc5c65', '#fd9644', '#fed330', '#26de81', '#2bcbba', '#00d4ff', '#dcff00', '#7a4544', '#6c4393'],
                                     
                                     display: true,
 
@@ -94,7 +106,7 @@
                                         text: 'Ranking Gêneros'
                                     },
                                     legend:{
-                                        position: 'bottom',
+                                        position: 'left',
                                         display:true,
                                     }
                                 }
