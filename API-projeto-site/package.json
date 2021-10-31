@@ -1,10 +1,10 @@
 {
-  "name": "music-test",
+  "name": "music-teste",
   "version": "1.0.0",
   "private": true,
   "scripts": {
     "start": "node ./projeto-site/bin/www",
-	"postinstall": "cd projeto-site && npm install
+	"postinstall": "cd projeto-site && npm install"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
