@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Cadastro / Login</title>
+</head>
+
+<body>
+
+    <nav>
+        
+        <img class="imgnav" src="img/logopag.png" alt="">
+
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+
+            <li>
+                <a href="">
+                    HISTORIA
+                    <img src="img/seta.png" width="12px" alt="">
+                </a>
+
+                <ul>
+                    <li><a href="index.html#significado">O que é musica?</a></li>
+                    <li><a href="index.html#historia">A historia da musica</a></li>
+                </ul>
+
+            </li>
+
+            <li><a href="beneficios.html">BENEFICIOS</a></li>
+
+            <li><a href="generos.html">GÊNEROS DE MUSICAS</a></li>
+
+            <li><a href="somos.html">SOBRE</a></li>
+
+            <li><a href="cadastro.html">LOGIN / CADASTRAR</a></li>
+            
+        </ul>
+
+
+    </nav>
+
+
+    <div class="divisao"></div>
+
+    <div class="container_formularios">
+
+        <div class="container_cadastro" id="cast">
+
+            <div class="formulario">
+
+                <h1>Cadastre-se</h1>
+
+                <form id="form_cadastro" method="post" onsubmit="return cadastrar()">
+
+                    <input type="text" name="nome" class="input-padrao" autofocus="autofocus" placeholder="Nome"
+                        required minlength="3" maxlength="25" autocomplete="off" id="nome_cadastro">
+
+
+                    <input type="text" name="login" class="input-padrao" autofocus="autofocus" placeholder="Login"
+                        required minlength="4" autocomplete="off" id="email_cadastro">
+
+
+                    <input type="email" name="email" class="input-padrao" autofocus="autofocus" placeholder="Email"
+                        required minlength="10" maxlength="50" autocomplete="off">
+
+
+                    <input type="password" name="senha" class="input-padrao" placeholder="Senha" required minlength="4"
+                    id="senha_cadastro">
+
+                    <input type="submit" id="btn_entrar" value="Cadastrar" class="btn_menu">
+
+                </form>
+
+            </div>
+
+            <img class="loading" id="loading" src="img/loading.gif" alt="">
+
+        </div>
+
+        <div id="obrigado" class="container_cadastro">
+
+            <div class="form_favoritos">
+
+                <h1>Obrigado por se cadastrar</h1>
+                    <h2>Agora é so logar</h2>
+            </div>
+
+        </div>
+
+        <div id="logando" class="container_login">
+
+
+            <h1>Login</h1>
+
+            <form id="form_login" method="post" onsubmit="return entrar()">
+
+                <input type="text" class="input-padrao" name="login" placeholder="Login" autocomplete="off">
+
+                <input type="password" class="input-padrao" placeholder="Senha" name="senha">
+
+                <button id="btn_entrar" class="btn_menu">Entrar</button>
+
+            </form>
+
+            <img id="loading_login" src="img/loading.gif" alt="">
+
+
+        </div>
+
+        
+
+        
+    </div>
+
+    <!-- <div class="divisao"></div> -->
+
+    <footer class="footer">
+        <h5>Feito com amor por um aluno bandtec</h5>
+    </footer>
+
+
+    
+
+
+
+</body>
+
+</html>
+
+<script>
+
+    function cadastrar() {
+        aguardar_cadastro();
+        var formulario = new URLSearchParams(new FormData(form_cadastro));
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            body: formulario
+        }).then(function (response) {
+
+            if (response.ok) {
+
+                console.log('cadastrou');
+                agradecimento();
+                
+            } else {
+                console.log('Erro de cadastro!');
+                response.text().then(function (resposta) {
+                    div_erro.innerHTML = resposta;
+                });
+                finalizar_aguardar();
+            }
+        });
+
+        return false;
+    }
+
+    function entrar() {
+        // event.preventDefault()
+        aguardar_login();
+        var formulario = new URLSearchParams(new FormData(form_login));
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            body: formulario
+        }).then(resposta => {
+
+            if (resposta.ok) {
+
+                resposta.json().then(json => {
+
+                    sessionStorage.login_usuario_meuapp = json.login;
+                    sessionStorage.nome_usuario_meuapp = json.nome;
+                    sessionStorage.id_usuario_meuapp = json.idUsuario; 
+
+                    window.location.href = 'painel.html';
+
+                });
+
+            } else {
+
+                console.log('Erro de login!');
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    finalizar_aguardar();
+                });
+            }
+        });
+
+        return false;
+    }
+
+        
+    function agradecimento(){
+        document.getElementById('cast').style.display = 'none'
+        document.getElementById('obrigado').style.display = 'block'
+    };
+
+    function aguardar_cadastro(){
+        loading.style.display = 'block';
+    }
+
+    function finalizar_aguardar(){
+        loading.style.display = 'none';
+    }
+
+    function aguardar_login(){
+        loading_login.style.display = 'block'
+    }
+
+    
+
+
+</script>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <script type="text/javascript" src="funcoes.js"></script>
+    <title>Adicionar favoritos</title>
+</head>
+
+<body>
+    <!--header inicio-->
+    <nav>
+
+        <img class="imgnav" src="img/logopag.png" alt="">
+
+        <ul>
+
+            <li><a href="painel.html">PAINEL</a></li>
+
+            <li><a href="apps.html">APLICATIVOS RECOMENDADOS</a></li>
+
+            <li><a href="favoritos.html">ADICIONAR FAVORITOS</a></li>
+
+            <li><a href="estatistica.html">ESTATISTICAS</a></li>
+
+            <li><a href="index.html">SAIR</a></li>
+
+            <div class="img-user">
+                <div class="nome">
+                    <b id="b_usuario"></b>
+                </div>
+                <img src="img/user.png" alt="">
+            </div>
+        </ul>
+
+    </nav>
+
+
+    <div class="divisao"></div>
+    <!--header fim-->
+
+    <div id="favoritos" class="container_favoritos">
+
+        <div class="form_favoritos">
+
+            <h1>Cadastrar favoritos</h1> <br>
+
+            <h2>Você pode cadastrar quantas vezes quiser,
+                isso nos ajuda com pesquisas.
+            </h2> <br>
+
+            <form id="form_favoritos" method="post" onsubmit="return favoritos()">
+
+                <select name="genero" class="seletao" autofocus required>
+                    <option value="">---</option>
+                    <option value="1">SAMBA</option>
+                    <option value="2">FUNK</option>
+                    <option value="3">TRAP</option>
+                    <option value="4">RAP</option>
+                    <option value="5">PAGODE</option>
+                    <option value="6">ROMANTICA</option>
+                    <option value="7">ROCK</option>
+                    <option value="8">RAP GEEK</option>
+                    <option value="9">SERTANEJO</option>
+                </select>
+
+                <!-- <input type="text" name="genero" class="input-padrao" autofocus="autofocus"
+                    placeholder="Genero Favorito" required minlength="2" autocomplete="off"> -->
+
+
+                <input type="text" name="musica" class="input-padrao" autofocus="autofocus"
+                    placeholder="Musica Favorita" required minlength="3" autocomplete="off">
+
+
+                <input type="text" name="artista" class="input-padrao iniciar" autofocus="autofocus"
+                    placeholder="Artista Favorito" required minlength="3" autocomplete="off">
+
+
+                <input type="submit" id="btn_cadastrar" value="Cadastrar" class="btn_menu">
+
+            </form>
+
+        </div>
+
+        <img class="loading" id="loading" src="img/loading.gif" alt="">
+
+    </div>
+
+    <div class="divisao"></div>
+
+    <!--footer inicio-->
+    <footer class="footer">
+        <h5>Feito com amor por um aluno bandtec</h5>
+    </footer>
+    <!--footer fim-->
+
+</body>
+
+</html>
+<script>
+
+    function favoritos() {
+        aguardar_cadastro();
+        var formulario = new URLSearchParams(new FormData(form_favoritos));
+        var idUsuario = sessionStorage.id_usuario_meuapp;
+        fetch(`/usuarios/favoritar/${idUsuario}`, {
+            method: "POST",
+            body: formulario
+        }).then(function (response) {
+
+            if (response.ok) {
+
+                console.log('cadastrou');
+                window.location.href = 'favoritos.html';
+
+            } else {
+                console.log('Erro de cadastro!');
+                response.text().then(function (resposta) {
+
+                });
+
+            }
+        });
+
+        return false;
+    };
+
+    function aguardar_cadastro(){
+        loading.style.display = 'block';
+    }
+    
+    let usuario;
+
+    verificar_autenticacao();
+
+</script>
