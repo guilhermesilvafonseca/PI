@@ -1,10 +1,10 @@
 {
-  "name": "music-teste-raiz",
-  "version": "1.0.0",
+  "name": "music-teste",
+  "version": "1.0.1",
   "private": true,
   "scripts": {
     "start": "node ./API-projeto-site/bin/www",
-	"postinstall": "cd API-projeto-site && npm start"
+	"postinstall": "cd API-projeto-site && npm install"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
